@@ -14,6 +14,10 @@ app.use(express.static('dist'));
 
 //  ****  V1  ****
 
+app.get('/', async (req, res) => {
+    res.status(200).json({ message: "Hello from the front page!" })
+})
+
 app.use('/api/v1/', router);
 
 app.listen(PORT, () => {
