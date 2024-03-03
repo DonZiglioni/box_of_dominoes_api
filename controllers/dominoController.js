@@ -25,7 +25,7 @@ export const getNewBox = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-    res.status(200).json({ message: `New Box of dominoes with SetId: ${id}`, newBox: response })
+    res.status(200).json({ newBox: response })
 };
 
 export const getNewSet = async (req, res) => {
@@ -56,7 +56,7 @@ export const getNewSet = async (req, res) => {
         console.log(error);
     }
 
-    res.status(200).json({ message: `New Set of shuffled dominoes with SetId: ${id}`, newSet: response })
+    res.status(200).json({ newSet: response })
 };
 
 export const shuffleSet = async (req, res) => {
@@ -87,7 +87,7 @@ export const shuffleSet = async (req, res) => {
         console.log(error);
     }
 
-    res.status(200).json({ message: `Shuffling Dominoes in Set: ${id}`, newSet: response })
+    res.status(200).json({ newSet: response })
 };
 
 export const drawDomino = async (req, res) => {
@@ -124,6 +124,6 @@ export const drawDomino = async (req, res) => {
     }
 
 
-    res.status(200).json({ message: `You picked up a domino!`, dominoes: selectedDominoes, remaining: updatingRemaining, response: response })
+    res.status(200).json({ dominoes: selectedDominoes, remaining: updatingRemaining, response: response })
 
 };
